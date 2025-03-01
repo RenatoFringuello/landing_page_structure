@@ -1,0 +1,68 @@
+@import url('./hamburger-btn.css');
+
+header{ 
+    .wrapper{
+        padding: 1rem;
+    }
+}
+    
+/*desktop*/
+@media only screen and (min-width:991px) {
+    /*
+    la width serve in modo da mostrarlo al posto dell'hamburger
+    la flex direction la metto reverse in modo da mostrare prima
+    la scelta di una lingua e poi il menu
+    */
+    header nav#main-menu{
+        width: auto !important;
+        flex-direction: row-reverse;  
+    }
+    
+    /*vedi sotto*/
+    .hr{
+        margin: 0 .5rem;
+    }
+}
+/*tablet e smartphone*/
+@media only screen and (max-width:991px) {
+    
+    header{
+        /*se da smartphone o tablet quando header è aperto*/
+        &.header-open{
+            height: 100dvh;
+            background: var(--overlay) ;
+            
+            /*come si deve mostrare il nav menu da aperto*/
+            nav#main-menu{
+                /*importante per mettere i UL a capo*/
+                width: 100%;
+                margin-top: 2rem;
+                display: flex;
+                /*da smartphone vorre vedere la lista delle lingue da scegliere alla fine*/
+                flex-direction: column;  
+                justify-content: center;
+                align-items: center;
+                
+                /*da smartphone voglio un elenco verticale*/
+                ul.nav{
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            } 
+        }
+        
+    }
+    
+    /*
+    di base il separatore è un div con il border
+    per usarlo in maniera verticale o orizzontale dobbiamo
+    mettere a 0 width per una riga verticale oppure
+    mettere a 0 height per una riga orizzontale
+
+    il margin viene messo in base all'orientamento
+    */
+    .hr{
+        margin: .5rem 0;
+        width: 100%;
+    }
+}

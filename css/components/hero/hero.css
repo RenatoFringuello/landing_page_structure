@@ -1,0 +1,29 @@
+section#hero{
+    
+    width: 100%;
+    height: 95svh;
+    top:0; left:0;
+    z-index: 2;
+
+    .img-wrapper{
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    
+    div.hero-description{
+        z-index: 3;
+        top:50%;
+        max-width: 800px;
+        background: var(--accent-transparent);
+        
+        div.description{
+            color: var(--accent-opp-transparent) !important;
+        }
+    }
+}

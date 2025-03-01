@@ -1,0 +1,10 @@
+:root{
+    --overlay : #fff;
+    
+    --accent-transparent : #000a;
+    --accent-opp-transparent : #fffa;
+    
+    --primary: #ffa;
+    --accent-color : #333;
+    --accent-opp-color : #eee;
+}
