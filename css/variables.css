@@ -1,4 +1,6 @@
 :root{
+    overscroll-behavior: none;
+
     --overlay : #fff;
     
     --accent-transparent : #000a;
