@@ -11,5 +11,5 @@ window.onload = (e) => {
 
     /* FOOTER */
     const footerCredits = document.getElementById("credits")
-    footerCredits.innerHTML += new Date().getFullYear().toString()
+    footerCredits.innerHTML = `&copy;${new Date().getFullYear().toString()} Renato Fringuello`
 }
