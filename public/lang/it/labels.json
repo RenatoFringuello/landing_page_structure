@@ -1,6 +1,10 @@
 {
     "hero":{
         "main-blockquote": "Un soggiorno indimenticabile, a due passi dal Centro Storico di Alghero",
-        "jumbotron.alt": "Paesaggio turistico di Alghero"
+        "jumbotron.alt": "Paesaggio turistico di Alghero",
+        "book-now": "Prenota Ora"
+    },
+    "gallery":{
+        "gallery-title": "Ultimi aggiornamenti Instagram"
     }
 }
