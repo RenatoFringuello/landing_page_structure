@@ -5,24 +5,54 @@
 
 let labels = undefined
 
-function fetchJSONData(path) {
-    fetch(path)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            console.log(data)
-            return response.json();  
-        })
-        .then(data => console.log(data))  
-        .catch(error => console.error('Failed to fetch data:', error)); 
+async function fetchJSONData(path) {
+    try {
+        const response = await fetch(path); // URL del JSON remoto
+        if (!response.ok) {
+            throw new Error(`Errore HTTP! Stato: ${response.status}`);
+        }
+        return await response.json(); // Converti la risposta in JSON
+        // console.log(data); // Usa i dati
+    } catch (error) {
+        console.error('Errore nel recupero del JSON:', error);
+    }
 }
 
-function load_language(lang=undefined){
+function write_data(key, val){
+    if (typeof val === "object" && val !== null){
+        Object.entries(val).forEach(([key, value]) => {
+            write_data(key, value)
+        });
+    }
+    else{
+        // vuol dire che si tratta di un valore
+        console.log(key, val)
+        inject_data(key, val)
+    }
+}
+
+function inject_data(key, value){
+    // recupero eventuali attributi nel nome
+    let [id, attribute] = key.split('.')
+    const item = document.getElementById(id)
+    if(item)
+        if(attribute){
+            // nel caso in cui l'attributo sia presente valorizzo quello
+            item.setAttribute(attribute, value)
+        }
+        else{
+            // altrimenti innerHTML
+            item.innerHTML = value
+        }
+}
+
+async function load_language(lang='en'){
     /* 
         per ogni label nel json popolo gli elementi caricati
         nel JSON la prima key rappresenta ogni id degli elementi figli del MAIN 
         le key interne rappresentano i tag o id degli elementi su cui scrivo
+
+        posso anche mettere id.attributo per inserire un valore nell'attributo
         es 
         (JSON)"hero":{
             "main-blockquote":"ciao come va"
@@ -47,24 +77,10 @@ function load_language(lang=undefined){
             </div>
         </section>
      */
-
-    switch (lang) {
-        case "IT":
-            // labels = label_IT
-            fetchJSONData('https://github.com/RenatoFringuello/landing_page_structure/blob/main/public/lang/it/labels.json')
-            break;
-        // case "DU":
-        //     labels = label_DU
-        //     break;
-        // case "FR":
-        //     labels = label_FR
-        //     break;
-        default:
-            // EN
-            // labels = label_EN
-            break;
-    }
+    labels = await fetchJSONData(`https://renatofringuello.github.io/landing_page_structure/public/lang/${lang.toLowerCase()}/labels.json`)
 
     // per ogni key recupero il dom e scrivo
-    console.log(labels)
+    Object.entries(labels).forEach(([key, value]) => {
+        write_data(key, value)
+    });
 }

@@ -1,7 +1,7 @@
 window.onload = (e) => {
     
     /* LANG */
-    load_language()
+    load_language('it')
 
     /* HEADER */
     const hamburgerMenu = document.getElementById("hamburger-menu-btn")
