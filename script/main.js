@@ -1,5 +1,8 @@
 window.onload = (e) => {
     
+    /* LANG */
+    load_language()
+
     /* HEADER */
     const hamburgerMenu = document.getElementById("hamburger-menu-btn")
     hamburgerMenu.addEventListener('click', function(){

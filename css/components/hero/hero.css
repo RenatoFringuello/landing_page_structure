@@ -24,6 +24,10 @@ section#hero{
         
         div.description{
             color: var(--accent-opp-transparent) !important;
+
+            figure blockquote{
+                font-size: clamp(2rem, 2rem + ((1vw - 0.2rem) * 1.255), 2.8rem);
+            }
         }
     }
 }
