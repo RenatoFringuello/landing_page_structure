@@ -12,5 +12,8 @@
     --accent-opp-color : #eee;
 
     /* fonts */
-    --font-xxl : clamp(2rem, 2rem + ((1vw - 0.2rem) * 1.255), 2.8rem);
+    --font-xxl : clamp(2rem  , 2rem   + ((1vw - 0.2rem) * 1.255), 2.8rem);
+    --font-xl  : clamp(1.8rem, 1.8rem + ((1vw - 0.2rem) * 0.627), 2.2rem);
+    --font-l   : clamp(1.2rem, 1.2rem + ((1vw - 0.2rem) * 0.941), 1.8rem);
+    --font-m   : clamp(0.9rem, 0.9rem + ((1vw - 0.2rem) * 0.471), 1.2rem);
 }
