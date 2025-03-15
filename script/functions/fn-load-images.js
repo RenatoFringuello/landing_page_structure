@@ -1,7 +1,7 @@
 function loadImages(){
        
     const rowGallery = document.querySelector('section#gallery .row')
-    for (let i = 1; i < 15; i++) {
+    for (let i = 1; i <= 10; i++) {
 
         const img = document.createElement('img')
         img.setAttribute('src', `https://picsum.photos/1920/1080?random=${i}`)
@@ -11,7 +11,7 @@ function loadImages(){
         img.addEventListener('click', openImg)
 
         const column = document.createElement('div')
-        column.className = "img-wrapper col-12 col-md-6 col-lg-4 col-xl-3"
+        column.className = "img-wrapper col-12 col-md-6 col-lg-4"// col-xl-3
         column.setAttribute('id', `gallery-img-${i}`)
         column.append(img)
 
