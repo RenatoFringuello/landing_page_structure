@@ -8,7 +8,7 @@
 *,
 *::before,
 *::after{
-    background: #0002;
+    /* background: #0002; */
     color: var(--accent-color);
 }
 
@@ -18,6 +18,12 @@
 
 button.btn{
 
+    &.no-style{
+        border: none;
+        background:none;
+        padding: .2rem;
+    }
+    
     border-radius: 0 !important;
     &.primary{
         --text-color:#fff;

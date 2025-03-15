@@ -6,6 +6,11 @@
     },
     "gallery": {
         "gallery-title": "Latest Instagram updates"
+    },
+    "location": {
+        "location-description": "The apartment is located in a convenient and quiet area",
+        "link-maps": "get information"
     }
+
 
 }

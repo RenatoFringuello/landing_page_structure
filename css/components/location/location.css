@@ -4,6 +4,7 @@ section#location{
 
     .description{
         width: 100%;
+        font-size: var(--font-xxl);
     }
 
     iframe#maps-location{

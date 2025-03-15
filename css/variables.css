@@ -1,6 +1,7 @@
 :root{
     overscroll-behavior: none;
 
+    /* colors */
     --overlay : #fff;
     
     --accent-transparent : #000a;
@@ -9,4 +10,7 @@
     --primary: #ffa;
     --accent-color : #333;
     --accent-opp-color : #eee;
+
+    /* fonts */
+    --font-xxl : clamp(2rem, 2rem + ((1vw - 0.2rem) * 1.255), 2.8rem);
 }

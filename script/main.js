@@ -1,8 +1,5 @@
 window.onload = (e) => {
     
-    /* LANG */
-    load_language('it')
-
     /* HEADER */
     const hamburgerMenu = document.getElementById("hamburger-menu-btn")
     hamburgerMenu.addEventListener('click', function(){
@@ -11,8 +8,11 @@ window.onload = (e) => {
     
     /* GALLERY */
     loadImages()
-
+    
     /* FOOTER */
     const footerCredits = document.getElementById("credits")
     footerCredits.innerHTML = `&copy;${new Date().getFullYear().toString()} Renato Fringuello`
+    
+    /* LANG */
+    load_language('it')
 }

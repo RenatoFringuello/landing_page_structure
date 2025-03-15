@@ -1,8 +1,11 @@
 @import url('./hamburger-btn.css');
 
 header{ 
+    background: var(--accent-opp-transparent);
+    
     .wrapper{
         padding: 1rem;
+        
     }
 }
     

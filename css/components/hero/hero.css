@@ -22,12 +22,9 @@ section#hero{
         max-width: 800px;
         background: var(--accent-transparent);
         
-        div.description{
+        div.description figure blockquote{
             color: var(--accent-opp-transparent) !important;
-
-            figure blockquote{
-                font-size: clamp(2rem, 2rem + ((1vw - 0.2rem) * 1.255), 2.8rem);
-            }
+            font-size: var(--font-xxl);
         }
     }
 }

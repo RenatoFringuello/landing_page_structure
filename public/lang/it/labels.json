@@ -6,5 +6,9 @@
     },
     "gallery":{
         "gallery-title": "Ultimi aggiornamenti Instagram"
+    },
+    "location":{
+        "location-description": "L’appartamento è situato in una zona comoda e tranquilla",
+        "link-maps": "ottieni informazioni"
     }
 }
