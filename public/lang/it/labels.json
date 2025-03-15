@@ -1,14 +1,28 @@
 {
-    "hero":{
-        "main-blockquote": "Un soggiorno indimenticabile, a due passi dal Centro Storico di Alghero",
-        "jumbotron.alt": "Paesaggio turistico di Alghero",
-        "book-now": "Prenota Ora"
+    "#hero":{
+        "#main-blockquote": "Un soggiorno indimenticabile, a due passi dal Centro Storico di Alghero",
+        "#jumbotron@alt": "Paesaggio turistico di Alghero",
+        "#book-now": "Prenota Ora"
     },
-    "gallery":{
-        "gallery-title": "Ultimi aggiornamenti Instagram"
+    "#gallery":{
+        "#gallery-title": "Ultimi aggiornamenti Instagram"
     },
-    "location":{
-        "location-description": "L’appartamento è situato in una zona comoda e tranquilla",
-        "link-maps": "ottieni informazioni"
+    "#location":{
+        "#location-description": "L’appartamento è situato in una zona comoda e tranquilla",
+        "#maps-location@src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d757.6118905124692!2d8.317787375904409!3d40.57587529360687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12dcf1f82d8980ef%3A0x7e230285093bd61d!2sVia%20delle%20Baleari%2C%2035%2C%2007041%20Alghero%20SS!5e0!3m2!1sit!2sit!4v1740500905519!5m2!1sit!2sit",
+        "#link-maps": "ottieni informazioni",
+        "#link-maps.href": "https://maps.app.goo.gl/x7HwixWz39nRHq4a6"
+    },
+    "#activities":{
+        "#link-maps-bar": "Scopri i bar e discoteche nelle vicinanze",
+        "#link-maps-bar@href": "https://maps.app.goo.gl/DCVQXCBrR8qZup2c9",
+        "#link-maps-resturant": "Scopri i ristoranti nelle vicinanze",
+        "#link-maps-resturant@href": "https://maps.app.goo.gl/CUhufa1zhkdjDi2UA",
+        ".link-maps-beach": [
+            "spiaggia 1",
+            "spiaggia 4",
+            "spiaggia 3",
+            "spiaggia 2"
+        ]
     }
 }

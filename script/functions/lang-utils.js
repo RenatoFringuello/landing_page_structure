@@ -18,23 +18,13 @@ async function fetchJSONData(path) {
     }
 }
 
-function write_data(key, val){
-    if (typeof val === "object" && val !== null){
-        Object.entries(val).forEach(([key, value]) => {
-            write_data(key, value)
-        });
-    }
-    else{
-        // vuol dire che si tratta di un valore
-        console.log(key, val)
-        inject_data(key, val)
-    }
-}
-
-function inject_data(key, value){
-    // recupero eventuali attributi nel nome
-    let [id, attribute] = key.split('.')
-    const item = document.getElementById(id)
+/**
+ * If the item exists then write as inner html or attribute the value passed
+ * @param {*} item - the item to write onto
+ * @param {*} attribute - the attribute (optional)
+ * @param {*} value - the value to write
+ */
+function write_DOM(item, value, attribute=undefined){
     if(item)
         if(attribute){
             // nel caso in cui l'attributo sia presente valorizzo quello
@@ -46,37 +36,86 @@ function inject_data(key, value){
         }
 }
 
-async function load_language(lang='en'){
-    /* 
-        per ogni label nel json popolo gli elementi caricati
-        nel JSON la prima key rappresenta ogni id degli elementi figli del MAIN 
-        le key interne rappresentano i tag o id degli elementi su cui scrivo
+/**
+ * viene passata una key del JSON con il suo value
+ * seguire la sintassi dei selettori per indicare il valore nel JSON.
+ * 
+ * Arrivati a questo punto il valore sarà inserito nel elemento
+ * 
+ * es. 
+ * 
+ * key   = #id_img@src
+ * 
+ * value = https://picsum.photos/1920/1080?random=0
+ * 
+ * l'elemento con id id_img avrà l'attributo con valore = value
+ * 
+ * lista selettori
+ * - \# => id
+ * - . => classe
+ * - @ => attributo
+ * 
+ * @param {String} key 
+ * @param {String} value 
+ */
+function inject_data(key, value, isArray=false){
+    // recupero eventuali attributi nel nome
+    let [selector, attribute] = key.split('@')
+    
+    // recupero il dom
+    let item = document.querySelector(selector)
 
-        posso anche mettere id.attributo per inserire un valore nell'attributo
-        es 
-        (JSON)"hero":{
-            "main-blockquote":"ciao come va"
-        }
-        (HTML)
-        <section id="hero" class="position-relative">
-            <div class="img-wrapper">
-                <img class="img" src="https://picsum.photos/1920/1080?random=0" alt="">
-            </div>
-            <div class="hero-description position-absolute p-2 p-lg-4">
-                <div class="description fs-1 mb-3">
-                    <figure>
-                        <blockquote id="main-blockquote">
-                            ciao come va
-                        </blockquote>
-                    </figure>
-                </div>
-                <div class="c2a-wrapper d-inline-flex justify-content-between gap-3">
-                    <button class="btn primary">Prenota Ora</button>
-                    <button class="btn primary">Prenota Ora</button>
-                </div>
-            </div>
-        </section>
-     */
+    // nel caso si tratti di un array
+    if(isArray){
+        // recupero tutti gli elementi
+        const item = document.querySelectorAll(key)
+        item.forEach((el, i) => {
+            write_DOM(el, value[i], attribute)
+        })
+    }
+    else{
+        write_DOM(item, value, attribute)
+    }
+}
+
+function write_data(k, val){
+    
+    // console.log(k, val)
+    // nel caso il value sia un oggetto rientro nel metodo fino a quando non scrivo
+    if(Array.isArray(val)){
+        // nel caso in cui value sia un array faccio un querySelectorAll
+        inject_data(k, val, true)
+    }
+    else if (typeof val === "object" && val !== null){
+        Object.entries(val).forEach(([key, value]) => {
+            write_data(key, value)
+        });
+    }
+    else{
+        // vuol dire che si tratta di un valore
+        // console.log(key, val)
+        inject_data(k, val)
+    }
+}
+
+/** 
+    per ogni label nel json popolo gli elementi caricati
+    nel JSON la prima key rappresenta ogni id degli elementi figli del MAIN 
+    le key interne rappresentano i tag o id degli elementi su cui scrivo
+
+    posso anche mettere id.attributo per inserire un valore nell'attributo
+    es 
+
+    (JSON) 
+    "#hero":{
+        "#main-blockquote":"ciao come va"
+    }
+
+    (HTML)
+    "\<blockquote id="main-blockquote">ciao come va\</blockquote>"
+*/
+async function load_language(lang='en'){
+    
     labels = await fetchJSONData(`https://renatofringuello.github.io/landing_page_structure/public/lang/${lang.toLowerCase()}/labels.json`)
 
     // per ogni key recupero il dom e scrivo
