@@ -14,15 +14,27 @@
         "#link-maps.href": "https://maps.app.goo.gl/x7HwixWz39nRHq4a6"
     },
     "#activities":{
-        "#link-maps-bar": "Scopri i bar e discoteche nelle vicinanze",
-        "#link-maps-bar@href": "https://maps.app.goo.gl/DCVQXCBrR8qZup2c9",
-        "#link-maps-resturant": "Scopri i ristoranti nelle vicinanze",
+        "#resturant-title": "🍽️ Un viaggio di sapori ad Alghero! 🌊✨",
+        "#resturant-info-intro": "Alghero non è solo mare cristallino e tramonti mozzafiato, ma anche una meta gastronomica imperdibile! Qui potrai gustare piatti tipici della cucina sarda e catalana, con ristoranti che offrono",
+        ".resturant-info-list": [
+            "🥘 Specialità di mare - Aragosta alla catalana, fregola ai frutti di mare, e grigliate di pesce fresco.",
+            "🍖 Sapori di terra - Porceddu croccante, malloreddus al sugo di salsiccia e formaggi locali come il pecorino sardo.",
+            "🍷 Vini e dolci tipici - Uniscili ai rinomati vini della regione, come il Cannonau e il Vermentino, e concludi con le deliziose seadas al miele."
+        ],
+        "#resturant-info-outro": "Se ami la buona cucina, Alghero ti conquisterà con i suoi sapori autentici e l’ospitalità dei suoi ristoranti! ✨🍷",
+        "#link-maps-resturant": "Cerca nelle vicinanze",
         "#link-maps-resturant@href": "https://maps.app.goo.gl/CUhufa1zhkdjDi2UA",
-        ".link-maps-beach": [
-            "spiaggia 1",
-            "spiaggia 4",
-            "spiaggia 3",
-            "spiaggia 2"
-        ]
+        "#bar-title": "🍹 Vivi la notte ad Alghero! 🌙✨",
+        "#bar-info-intro": "Dopo una cena deliziosa, Alghero si accende con un’ampia scelta di locali, bar e discoteche perfette per proseguire la serata tra cocktail, musica e divertimento!",
+        ".bar-info-list": [
+            "🍸 Cocktail bar - Lounge bar eleganti e locali sulla spiaggia dove gustare drink raffinati con vista mare.",
+            "🎶 Live music & pub - Atmosfera vibrante con musica dal vivo, pub storici e birrerie artigianali per una serata più rilassata.",
+            "💃 Discoteche & beach club - Dai club esclusivi sul mare alle discoteche con DJ set fino all’alba, perfette per ballare tutta la notte."
+        ],
+        "#bar-info-outro": "Che tu voglia sorseggiare un drink in riva al mare o scatenarti sulla pista da ballo, la vita notturna di Alghero offre esperienze uniche per ogni gusto! 🌟🥂",
+        "#link-maps-bar": "Cerca nelle vicinanze",
+        "#link-maps-bar@href": "https://maps.app.goo.gl/DCVQXCBrR8qZup2c9"
+
+        
     }
 }
