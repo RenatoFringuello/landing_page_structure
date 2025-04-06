@@ -1,0 +1,32 @@
+.bento-grid-wrapper {
+    --gap:.8rem;
+    --min-grid-row:150px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--min-grid-row), 1fr));
+    grid-auto-rows: var(--min-grid-row);
+    gap: var(--gap);
+
+    .bento-grid-item {
+        overflow: hidden;
+        border-radius: var(--gap);
+        transition: all 0.3s ease;
+        
+        &.landscape {
+            grid-column: span 2;
+        }
+        &.portrait {
+            grid-row: span 2;
+        }
+        &.square {
+            /* 1x1 by default */
+        }
+
+        img {
+            width: 100%;height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+    }
+}

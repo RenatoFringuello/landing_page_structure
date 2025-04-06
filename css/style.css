@@ -2,7 +2,9 @@
 @import url('./components/header/header.css');
 @import url('./components/hero/hero.css');
 @import url('./components/location/location.css');
-@import url('./components/gallery/gallery.css');
+@import url('./components/gallery/gallery.css');/*to remove*/
+@import url('./components/gallery/bento-gallery.css');
+@import url('./components/activities/activities.css');
 @import url('./components/footer/footer.css');
 
 *,
@@ -19,17 +21,35 @@
 a[target="_blank"]{
     position: relative;
 
+    &:hover::after{
+        --movement-range: -2.5px;
+        top: var(--movement-range);
+        right: var(--movement-range);
+    }
+
     &::after{
         content: '';
+        top: 0; right: 0;
+        transition: all 0.25s ease-in;
         color: inherit;
         position: absolute;
-        top: 0; right: 0;
         transform: translateX(50%);
         width: 10px;
         aspect-ratio: 1/1;
         border: 1px solid;
         border-bottom: 0;
         border-left: 0;
+    }
+}
+
+.img-wrapper{
+    /* width: 100%; */
+    height: 100%;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 }
 
@@ -61,5 +81,14 @@ button.btn{
         --bs-btn-disabled-color: var(--text-color);
         --bs-btn-disabled-bg: var(--bg-color);
         --bs-btn-disabled-border-color: var(--bg-color);
+    }
+}
+
+/* con questo tipo di ul all'inizio di ogni li si potrà mettere un icona scelta, come un emoji 
+    e verrà usata come simbolo dell'elenco puntato */
+ul.my-ul{
+    list-style-type: none;
+    li{
+        text-indent: -1.7rem;
     }
 }
