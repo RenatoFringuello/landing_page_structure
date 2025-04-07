@@ -1,4 +1,4 @@
-window.onload = (e) => {
+window.addEventListener('DOMContentLoaded', ()=>{
     
     /* HEADER */
     const hamburgerMenu = document.getElementById("hamburger-menu-btn")
@@ -16,7 +16,18 @@ window.onload = (e) => {
     /* FOOTER */
     const footerCredits = document.getElementById("credits")
     footerCredits.innerHTML = `&copy;${new Date().getFullYear().toString()} Renato Fringuello`
-    
+
     /* LANG, è alla fine perché tutti i tag devono essere caricati prima di lavorarci*/
     load_language('it')
-}
+
+    /* SHAPES */
+    initShapes(7)
+
+    // mouse movement event
+    document.addEventListener('mousemove', (e)=>{
+        updateShapes(e)
+    })
+    window.addEventListener('scroll', (e)=>{
+        updateShapes(e)
+    })
+})

@@ -1,6 +1,6 @@
 .bento-grid-wrapper {
     --gap:.8rem;
-    --min-grid-row:150px;
+    --min-grid-row:200px;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--min-grid-row), 1fr));

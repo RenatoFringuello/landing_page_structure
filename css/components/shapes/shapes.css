@@ -1,0 +1,58 @@
+#app,
+#items-container{
+    position: absolute;
+    top:0;left:0;
+    width: 100%;
+}
+
+#app{
+    z-index: 1;
+    visibility: hidden;
+}
+
+#items-container{
+    z-index: 0;
+}
+
+/*
+    l'elemento deve avere
+    --l: 200px;
+    width:var(--l);
+    height:var(--l);
+*/
+.noise-item{
+    --l: 200px;
+    width:var(--l);
+    height:var(--l);
+
+    --angle          : 60deg;
+    --grad-angle     : var(--angle);
+    --gradient-start : 85%;
+    position:relative;
+    
+    &::before{
+        content:"";
+        position:absolute;
+        width:100%; height:100%;
+        filter: contrast(220%) brightness(250%);
+        /* top:50%; left:50%; */
+        translate : -50% -50%;
+        transform : rotate(var(--angle));
+        background: 
+            linear-gradient(var(--grad-angle), var(--color-noise-start) 0%, var(--color-noise-middle) var(--gradient-start), var(--color-noise-end)),
+            var(--noise);
+    }
+}
+
+.square-shape::before{
+    border-radius: 1rem;
+}
+.circle-shape::before{
+    border-radius: 50%;
+}
+.orange-shape::before{
+    border-radius: 48% 46% 49% 56%;
+}
+.lemon-shape::before{
+    border-radius: 65% 23% 62% 27%;
+}

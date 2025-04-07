@@ -1,4 +1,5 @@
 @import url('./variables.css');
+@import url('./components/shapes/shapes.css');
 @import url('./components/header/header.css');
 @import url('./components/hero/hero.css');
 @import url('./components/location/location.css');
