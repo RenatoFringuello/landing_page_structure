@@ -7,10 +7,11 @@
 
 #app{
     z-index: 1;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 #items-container{
+    overflow-x: hidden;
     z-index: 0;
 }
 
@@ -21,29 +22,30 @@
     height:var(--l);
 */
 .noise-item{
+    
     --l: 200px;
-    width:var(--l);
+    width :var(--l);
     height:var(--l);
-
+    
     --angle          : 60deg;
     --grad-angle     : var(--angle);
     --gradient-start : 85%;
+    --filter: contrast(280%) brightness(220%); /* per safari vedi sotto */
     position:relative;
     
     &::before{
         content:"";
         position:absolute;
         width:100%; height:100%;
-        filter: contrast(220%) brightness(250%);
+        filter        : var(--filter);
+        -webkit-filter: var(--filter);
         /* top:50%; left:50%; */
-        translate : -50% -50%;
-        transform : rotate(var(--angle));
+        transform: translate(-50%, -50%) rotate(var(--angle));
         background: 
             linear-gradient(var(--grad-angle), var(--color-noise-start) 0%, var(--color-noise-middle) var(--gradient-start), var(--color-noise-end)),
             var(--noise);
     }
 }
-
 .square-shape::before{
     border-radius: 1rem;
 }
@@ -55,4 +57,11 @@
 }
 .lemon-shape::before{
     border-radius: 65% 23% 62% 27%;
+}
+
+/* Safari only */
+@supports (-webkit-hyphens: none) {
+    .noise-item::before {
+        --filter: contrast(220%) brightness(180%);
+    }
 }

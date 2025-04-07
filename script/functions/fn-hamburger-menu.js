@@ -3,7 +3,7 @@ const header   = document.querySelector('header#main-header')
 const body     = document.querySelector('body')
 const mainMenu = document.getElementById('main-menu')
 
-function toggle_hmenu(obj){
+function toggleHmenu(obj){
     if(obj.classList.contains('open')){
         /* cosa faccio prima di chiudere */
         closeMenu(obj)

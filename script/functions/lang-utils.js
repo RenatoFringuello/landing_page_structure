@@ -114,7 +114,7 @@ function write_data(k, val){
     (HTML)
     "\<blockquote id="main-blockquote">ciao come va\</blockquote>"
 */
-async function load_language(lang='en'){
+async function loadLanguage(lang='en'){
     
     labels = await fetchJSONData(`https://renatofringuello.github.io/landing_page_structure/public/lang/${lang.toLowerCase()}/labels.json`)
 

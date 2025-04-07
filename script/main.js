@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     /* HEADER */
     const hamburgerMenu = document.getElementById("hamburger-menu-btn")
     hamburgerMenu.addEventListener('click', function(){
-        toggle_hmenu(this)
+        toggleHmenu(this)
     })
     
     /* GALLERY */
@@ -18,16 +18,15 @@ window.addEventListener('DOMContentLoaded', ()=>{
     footerCredits.innerHTML = `&copy;${new Date().getFullYear().toString()} Renato Fringuello`
 
     /* LANG, è alla fine perché tutti i tag devono essere caricati prima di lavorarci*/
-    load_language('it')
+    loadLanguage('it')
 
     /* SHAPES */
     initShapes(7)
-
+    
     // mouse movement event
     document.addEventListener('mousemove', (e)=>{
+        // update shapes aim
         updateShapes(e)
     })
-    window.addEventListener('scroll', (e)=>{
-        updateShapes(e)
-    })
+
 })
