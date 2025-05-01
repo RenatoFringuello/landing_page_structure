@@ -1,0 +1,28 @@
+#loader{
+    position: sticky;
+    top:0;left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 9999;
+    display: grid;
+
+    background: #fff;
+    
+    &::after{
+        content: '';
+        /* position: absolute; */
+        display: inline;
+        place-self: center;
+        width: 50px;
+        aspect-ratio: 1/1;
+        background-color: var(--primary);
+        animation: rotate 2.3s none .3s infinite ease-in-out;
+    }
+}
+
+@keyframes rotate {
+    0%  {transform: rotate(0deg);   border-radius: 10px;}
+    40% {transform: rotate(360deg); border-radius: 0px;}
+    60% {transform: rotate(360deg); border-radius: 0px;}
+    100%{transform: rotate(0deg);   border-radius: 10px;}
+}

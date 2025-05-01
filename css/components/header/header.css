@@ -3,8 +3,8 @@
 header{ 
     background: var(--accent-opp-transparent);
     border-bottom: 1px solid white;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(var(--blur-size));
+    backdrop-filter: blur(var(--blur-size));
 
     .wrapper{
         padding: 1rem;
@@ -33,6 +33,7 @@ header{
 @media only screen and (max-width:991px) {
     
     header{
+        z-index: 1; /* il position fixed ne ha bisogno*/
         /*se da smartphone o tablet quando header è aperto*/
         &.header-open{
             height: 100dvh;

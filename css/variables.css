@@ -1,13 +1,15 @@
 :root{
     overscroll-behavior: none;
 
+    --blur-size : 3px;
+
     /* colors */
     --overlay : #fff;
     
     --accent-transparent : #000a;
     --accent-opp-transparent : #fffa;
     
-    --primary: #ffa;
+    --primary: #d6373795;
     --accent-color : #333;
     --accent-opp-color : #eee;
 
@@ -19,9 +21,9 @@
 
     /* noise */
     --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 326 326' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='6.81' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    --color-noise-start  : #023ebe67;
-    --color-noise-middle : #373fd695;
-    --color-noise-end    : #4d00d273;
+    --color-noise-start  : #be020267;
+    --color-noise-middle : var(--primary);/*#d6373795;*/
+    --color-noise-end    : #d29e0073;
     /* --color-noise-start  : #79be0275;
     --color-noise-middle : #51d637ad;
     --color-noise-end    : #00d20e64; */

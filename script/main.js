@@ -1,3 +1,30 @@
+// quando sono state caricati anche i contenuti
+window.addEventListener('load', ()=>{
+    let t = setTimeout(()=>{
+
+        /* SHAPES */
+        initShapes(7)
+        
+        // mouse movement event
+        document.addEventListener('mousemove', (e)=>{
+            // update shapes aim
+            updateShapes(e)
+        })
+
+        // dopo che ho generato gli shapes levo il loader
+        toggleLoading(false)
+
+        clearTimeout(t)
+    }, 1500)
+})
+
+/**
+ * cambiare strategia:
+ * 
+ * invece di mettere l'element per gli shapes usa una canvas che sia alta quanto tutto l'HTML
+ */
+
+// quando il DOM è stato caricato
 window.addEventListener('DOMContentLoaded', ()=>{
     
     /* HEADER */
@@ -19,14 +46,4 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
     /* LANG, è alla fine perché tutti i tag devono essere caricati prima di lavorarci*/
     loadLanguage('it')
-
-    /* SHAPES */
-    initShapes(7)
-    
-    // mouse movement event
-    document.addEventListener('mousemove', (e)=>{
-        // update shapes aim
-        updateShapes(e)
-    })
-
 })
